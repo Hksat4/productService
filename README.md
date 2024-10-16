@@ -50,7 +50,6 @@ springboot-customer-data-api
  Features
 
 RESTful API:
-  - Provides endpoints for retrieving customer data statistics.
   - POST request allows users to upload raw customer data and receive a statistical report.
   
 Data Processing:
@@ -67,7 +66,7 @@ Security:
 - Custom Exception Handling:
   - Global exception handling with InvalidInputException to manage invalid input data.
 
-- SOLID Principles and Design Patterns**:
+- SOLID Principles and Design Patterns:
   - Implements Factory Pattern for data parsers.
   - Implements Strategy Pattern for generating reports.
 
