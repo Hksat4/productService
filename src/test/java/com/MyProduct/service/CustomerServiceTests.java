@@ -1,6 +1,7 @@
 package com.MyProduct.service;
 
 
+import com.MyProduct.exception.InvalidInputException;
 import com.MyProduct.model.CustomerData;
 import com.MyProduct.strategy.GeoZoneReportStrategy;
 import org.junit.jupiter.api.BeforeEach;
@@ -75,7 +76,7 @@ class CustomerServiceTests {
         String invalidInput = "";
 
         // When / Then
-        assertThrows(IllegalArgumentException.class, () -> customerService.generateReport(invalidInput));
+        assertThrows(InvalidInputException.class, () -> customerService.generateReport(invalidInput));
         verify(dataParserFactory, never()).getParser(anyString());
         verify(csvDataParser, never()).parse(anyString());
         verify(geoZoneReportStrategy, never()).generateReport(anyList());
