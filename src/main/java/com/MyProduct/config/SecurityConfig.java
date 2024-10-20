@@ -19,8 +19,7 @@ public class SecurityConfig {
     // Configure the SecurityFilterChain with Basic Authentication and Role-based access control
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(csrf -> csrf.disable()) // Disable CSRF for APIs
+        http.csrf(csrf -> csrf.disable()) // Disable CSRF for APIs
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/v1/customers/**").hasRole("ADMIN")  // Protect this path for ADMIN role
                         .anyRequest().authenticated()  // All other requests must be authenticated
